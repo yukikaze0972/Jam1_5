@@ -12,5 +12,8 @@
     <ClInclude Include="tamogami.h">
       <Filter>ヘッダファイル</Filter>
     </ClInclude>
+    <ClInclude Include="turuto.h">
+      <Filter>ヘッダファイル</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
