@@ -89,6 +89,7 @@
     <ClCompile Include="winmain.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="itou.h" />
     <ClInclude Include="tamogami.h" />
     <ClInclude Include="turuto.h" />
   </ItemGroup>
