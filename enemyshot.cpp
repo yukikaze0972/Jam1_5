@@ -3,9 +3,10 @@
 #include "enemyshot.h"
 #include "player.h"
 #include "game.h"
+#include "shot.h"
 
 
-
+int AttackCoolTime;
 En enemyshot[EnemyShotNum];//弾
 //弾の初期化
 void initEnemyShot()
@@ -37,11 +38,18 @@ void updateEnemyShot()
 				enemyshot[i].enable = false;
 			}
 		}
-		if (isHit(player, enemyshot[i]))
+		if (isHit(player, enemyshot[i]) && BlackHole.enable == false)
 		{
-			//当たっている
-			player.color = enemyshot[i].color;
-			gameOverFlag = true;//ゲームオーバーフラグを立てる
+			if (AttackCoolTime == 0)
+			{
+				playerHp--;//プレイヤーのHPを減らす
+				AttackCoolTime = 30;//アタッククールタイムを作る
+				playerBar.x2--;
+			}
+			if (playerHp == 0)
+			{
+				gameOverFlag = true;//ゲームオーバーフラグを立てる
+			}
 		}
 	}
 

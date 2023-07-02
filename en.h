@@ -8,8 +8,8 @@ enum EnemyType
 	ENEMY3,//敵タイプ３
 	ENEMY4,//敵タイプ４
 	ENEMY5, //敵タイプ５
-	ENEMY6,//敵タイプ6
-	ENEMY7//敵タイプ7
+	ENEMY6,
+	ENEMY7
 };
 struct MovePattern
 {
@@ -33,8 +33,18 @@ struct En
 	int cooltime;//連射できないようにするタイマー
 	int counter;
 	int spawnTiming;//出現タイミング
-	std::map<int,MovePattern> pattern;
+	std::map<int, MovePattern> pattern;
 
+};
+
+struct Box
+{
+	double x1;//X座標
+	double y1;//Y座標
+	double x2;//X座標
+	double y2;//Y座標
+	int color;//円の色
+	bool fill;//塗りつぶすか否か
 };
 
 bool isHit(En en1, En en2);//当たり判定関数

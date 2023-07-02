@@ -2,9 +2,12 @@
 #include "DxLib.h"
 #include "shot.h"
 #include "player.h"
+#include "game.h"
 
 En player;//プレイヤー
 int shotse;
+int playerHp;
+bool LightRaysTrigger;
 //プレイヤーの初期化
 void initPlayer()
 {
@@ -18,25 +21,28 @@ void initPlayer()
 
 	playerimg= LoadGraph("UFO.png");
 
+	playerHp = 200;
+	LightRaysTrigger = false;
+
 }
 
 //プレイヤーの更新
 void updatePlayer()
 {
 	//プレイヤーを動かす
-	if (CheckHitKey(KEY_INPUT_RIGHT) == 1)
+	if (CheckHitKey(KEY_INPUT_D) == 1)
 	{
 		player.x = player.x + 2.0;
 	}
-	if (CheckHitKey(KEY_INPUT_LEFT) == 1)
+	if (CheckHitKey(KEY_INPUT_A) == 1)
 	{
 		player.x = player.x - 2.0;
 	}
-	if (CheckHitKey(KEY_INPUT_UP) == 1)
+	if (CheckHitKey(KEY_INPUT_W) == 1)
 	{
 		player.y = player.y - 2.0;
 	}
-	if (CheckHitKey(KEY_INPUT_DOWN) == 1)
+	if (CheckHitKey(KEY_INPUT_S) == 1)
 	{
 		player.y = player.y + 2.0;
 	}
@@ -58,8 +64,8 @@ void updatePlayer()
 	}
 
 	//弾を撃つ処理
-	if (CheckHitKey(KEY_INPUT_Z) == 1 &&
-		player.cooltime <= 0)
+	if (CheckHitKey(KEY_INPUT_SPACE) == 1 &&
+		player.cooltime <= 0 && selectbomb == 0)
 	{
 		//弾が無効なときのみ初期値をセットし有効にする
 		for (int i = 0; i < ShotNum; i++)
@@ -75,6 +81,20 @@ void updatePlayer()
 				break;
 			}
 		}
+	}
+
+	if (CheckHitKey(KEY_INPUT_SPACE) == 1 && selectbomb == 1 && BlackHole.enable == false)
+	{
+		BlackHole.x = player.x;
+		BlackHole.y = player.y;
+		BlackHoleDuration = 1000;
+		BlackHole.enable = true;
+	}
+
+	if (CheckHitKey(KEY_INPUT_SPACE) == 1 && selectbomb == 2 && LightRaysTrigger == false)
+	{
+		LightRaysDuration = 300;
+		LightRaysTrigger = true;
 	}
 	//銃を冷やす処理
 	if (player.cooltime > 0) {
