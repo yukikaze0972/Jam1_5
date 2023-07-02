@@ -419,7 +419,7 @@ void drawEnemy()
 {
 	for (int i = 0; i < EnemyNum; i++) {
 		if (enemy[i].enable == true) {
-			DrawGraph(enemy[i].x-10, enemy[i].y-40, enemyimg,true);//“G‚Ì•`‰æ
+			DrawGraph(enemy[i].x-10, enemy[i].y-30, enemyimg,true);//“G‚Ì•`‰æ
 		}
 	}
 }
@@ -428,7 +428,7 @@ void drawsecondEnemy()
 {
 	for (int i = 0; i < EnemyNum; i++) {
 		if (enemy2[i].enable == true) {
-			DrawGraph(enemy2[i].x - 10, enemy2[i].y - 40, enemyimg, true);//“G‚Ì•`‰æ
+			DrawGraph(enemy2[i].x - 10, enemy2[i].y - 30, enemyimg, true);//“G‚Ì•`‰æ
 		}
 	}
 }

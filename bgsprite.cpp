@@ -10,9 +10,9 @@ double scrollX4 = 800.0;//スクロールの関数
 //背景スプライトの初期化
 void initBg()
 {
-	bgimg0 = LoadGraph("BG0.png");//背景画像1
-	bgimg1 = LoadGraph("BG1.png");//背景画像2
-	bgimg2 = LoadGraph("BG2.png");//背景画像3
+	bgimg0 = LoadGraph("IMG_6884 (1).jpg");//背景画像1
+	bgimg1 = LoadGraph("IMG_6884 (1).jpg");//背景画像2
+	bgimg2 = LoadGraph("IMG_6884 (1).jpg");//背景画像3
 
 }
 //背景移動の処理
@@ -30,8 +30,8 @@ double scroll(double x, double speed)//スクロールの位置とスピードの関数
 void updateBg()
 {
 	//スクロール
-	scrollX1 = scroll(scrollX1, 0.2);//スクロールの関数
-	scrollX2 = scroll(scrollX2, 0.2);//スクロールの関数
+	scrollX1 = scroll(scrollX1, 1.0);//スクロールの関数
+	scrollX2 = scroll(scrollX2, 1.0);//スクロールの関数
 
 	scrollX3 = scroll(scrollX3, 1.0);//スクロールの関数
 	scrollX4 = scroll(scrollX4, 1.0);//スクロールの関数
@@ -40,7 +40,6 @@ void updateBg()
 void drawBg()
 {
 	DrawGraph(scrollX1, 0, bgimg0, true);//背景画像1のスクロール
-	DrawGraph(scrollX2, 0, bgimg0, true);//背景画像1のスクロール
-	DrawGraph(scrollX3, 0, bgimg1, true);//背景画像2のスクロール
-	DrawGraph(scrollX4, 0, bgimg2, true);//背景画像3のスクロール
+	DrawGraph(scrollX2, 0, bgimg1, true);//背景画像2のスクロール
+	DrawGraph(scrollX3, 0, bgimg2, true);//背景画像3のスクロール
 }
