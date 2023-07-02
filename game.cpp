@@ -49,10 +49,7 @@ void updateGame()
 		t = t + 1;
 		score = 0;
 	}
-	if (t >= 10) {
-		scene = stand;
-		
-	}
+	
 	if (p >= 2) {
 		scene = stand;
 		
@@ -75,14 +72,11 @@ void secondUpdate()
 		t = t + 1;
 		score = 0;
 	}
-	if (t >=20)
-	{
-		scene = cria;
-	}
-	if (p >= 4)
-	{
-		scene = cria;
-	}
+	
+	//if (p >= 4)
+	//{
+		//scene = cria;
+	//}
 
 
 	if (playerBar.x2 <= 600)

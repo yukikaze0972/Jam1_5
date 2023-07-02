@@ -1,6 +1,5 @@
 #pragma once
 #include <map>
-
 enum EnemyType
 {
 	ENEMY1,//敵タイプ１
@@ -9,7 +8,7 @@ enum EnemyType
 	ENEMY4,//敵タイプ４
 	ENEMY5, //敵タイプ５
 	ENEMY6,
-	ENEMY7
+	ENEMY7, ENEMY8
 };
 struct MovePattern
 {
@@ -34,9 +33,7 @@ struct En
 	int counter;
 	int spawnTiming;//出現タイミング
 	std::map<int, MovePattern> pattern;
-
 };
-
 struct Box
 {
 	double x1;//X座標
@@ -46,8 +43,6 @@ struct Box
 	int color;//円の色
 	bool fill;//塗りつぶすか否か
 };
-
 bool isHit(En en1, En en2);//当たり判定関数
-
 bool isRight(En shot, En target);//進行方向の右にいるか
 void RotVec(En& shot, double r);

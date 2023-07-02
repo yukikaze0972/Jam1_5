@@ -7,22 +7,24 @@
 #include "player.h"
 #include "game.h"
 #include "effect.h"
-
 extern bool gameOverFlag;//ゲームオーバー判定
 En enemy[EnemyNum];//1ndの敵の関数
 En enemy2[EnemyNum];//2ndの敵の関数
 int explodese;//爆破エフェクトの関数
 int enemyimg;//爆破エフェクトの画像
-
+int enemy2img;
+int kisidaimg;
+int kisidahp;
+int q = 0;
 //敵の初期化
 void initEnemy()
 {
 	//爆破エフェクト
 	explodese = LoadSoundMem("maou_se_battle_explosion05.mp3");
-
 	//敵の画像
-	enemyimg = LoadGraph("teki (1).png");
-
+	enemyimg = LoadGraph("enemy1.png");
+	enemy2img = LoadGraph("enemy2.png");
+	kisidaimg = LoadGraph("kisida.png");
 	//1ステージ目の敵
 	//1体目の敵
 	enemy[0].x = 900;//敵のX座標
@@ -34,7 +36,6 @@ void initEnemy()
 	enemy[0].vx = -2.0;//X方向のスピード
 	enemy[0].vy = 0.0;//Y方向のスピード
 	enemy[0].type = ENEMY2;//弾の種類
-
 	//2体目の敵
 	enemy[1].x = 1500;//敵のX座標
 	enemy[1].y = 300;//敵のY座標
@@ -45,7 +46,6 @@ void initEnemy()
 	enemy[1].vx = -2.0;//X方向のスピード
 	enemy[1].vy = 0.0;//Y方向のスピード
 	enemy[1].type = ENEMY2;//弾の種類
-
 	//3体目の敵
 	enemy[2].x = 2000;//敵のX座標
 	enemy[2].y = 200;//敵のY座標
@@ -56,46 +56,51 @@ void initEnemy()
 	enemy[2].vx = -2.0;//X方向のスピード
 	enemy[2].vy = 0.0;//Y方向のスピード
 	enemy[2].type = ENEMY3;//弾の種類
-
-
+	//4体目の敵
+	enemy[3].x = 2300;
+	enemy[3].y = 200;
+	enemy[3].r = 30;
+	enemy[3].color = GetColor(255, 0, 0);
+	enemy[3].fill = true;
+	enemy[3].enable = true;
+	enemy[3].vx = -2.0;
+	enemy[3].vy = 0.0;
+	enemy[3].type = ENEMY3;
+	//5体目の敵
+	enemy[4].x = 2500;
+	enemy[4].y = 200;
+	enemy[4].r = 30;
+	enemy[4].color = GetColor(255, 0, 0);
+	enemy[4].fill = true;
+	enemy[4].enable = true;
+	enemy[4].vx = -2.0;
+	enemy[4].vy = 0.0;
+	enemy[4].type = ENEMY3;
+	//6体目の敵
+	enemy[6].x = 2500;
+	enemy[6].y = 200;
+	enemy[6].r = 30;
+	enemy[6].color = GetColor(255, 0, 0);
+	enemy[6].fill = true;
+	enemy[6].enable = true;
+	enemy[6].vx = -2.0;
+	enemy[6].vy = 0.0;
+	enemy[6].type = ENEMY3;
 	//2ステージ目の敵
 	//1体目の敵
-	enemy2[0].x = 900;//敵のX座標
-	enemy2[0].y = 400;//敵のY座標
-	enemy2[0].r = 30;//敵の大きさ
-	enemy2[0].color = GetColor(255, 0, 0);//敵の色
-	enemy2[0].fill = true;//塗りつぶすか否か
-	enemy2[0].enable = true;//生きているか死んでいるか
-	enemy2[0].vx = -2.0;//X方向のスピード
-	enemy2[0].vy = 0.0;//Y方向のスピード
-	enemy2[0].type = ENEMY4;//弾の種類
-
-	//2体目の敵
-	enemy2[1].x = 1500;//敵のX座標
-	enemy2[1].y = 300;//敵のY座標
-	enemy2[1].r = 30;//敵の大きさ
-	enemy2[1].color = GetColor(255, 0, 0);//敵の色
-	enemy2[1].fill = true;//塗りつぶすか否か
-	enemy2[1].enable = true;//生きているか死んでいるか
-	enemy2[1].vx = -2.0;//X方向のスピード
-	enemy2[1].vy = 0.0;//Y方向のスピード
-	enemy2[1].type = ENEMY5;//弾の種類
-
-	//3体目の敵
-	enemy2[2].x = 2200;//敵のX座標
-	enemy2[2].y = 500;//敵のY座標
-	enemy2[2].r = 30;//敵の大きさ
-	enemy2[2].color = GetColor(255, 0, 0);//敵の色
-	enemy2[2].fill = true;//塗りつぶすか否か
-	enemy2[2].enable = true;//生きているか死んでいるか
-	enemy2[2].vx = -2.0;//X方向のスピード
-	enemy2[2].vy = 0.0;//Y方向のスピード
-	enemy2[2].type = ENEMY6;//弾の種類
-
-	
+	enemy2[0].x = 900;
+	enemy2[0].y = 300;
+	enemy2[0].r = 50;
+	enemy2[0].color = GetColor(255, 0, 0);
+	enemy2[0].fill = true;
+	enemy2[0].enable = true;
+	enemy2[0].vx = -2.0;
+	enemy2[0].vy = 2.0;
+	enemy2[0].type = ENEMY4;
+	kisidahp = 100;
 }
 //真っすぐ弾を撃つ
-void straightShot(int rad,En ene)
+void straightShot(int rad, En ene)
 {
 	//弾が無効なときのみ初期値をセットし有効にする
 	for (int j = 0; j < EnemyShotNum; j++)
@@ -116,12 +121,10 @@ void straightShot(int rad,En ene)
 		}
 	}
 }
-
-void tripleShot(int rad,  En ene)
+void tripleShot(int rad, En ene)
 {
 	for (int j = 0; j < EnemyShotNum; j++)
 	{
-		
 		//撃てる弾をみつける
 		if (enemyshot[j].enable == false) {
 			//弾を撃つ
@@ -133,13 +136,11 @@ void tripleShot(int rad,  En ene)
 			enemyshot[j].vx = speed * cos(minrad * rad);
 			enemyshot[j].vy = speed * sin(minrad * rad);
 			enemyshot[j].enable = true;
-			
 			break;
 		}
 	}
 }
-
-void twinShot( int rad, int shifty,En ene)
+void twinShot(int rad, int shifty, En ene)
 {
 	for (int j = 0; j < EnemyShotNum; j++)
 	{
@@ -147,7 +148,7 @@ void twinShot( int rad, int shifty,En ene)
 		if (enemyshot[j].enable == false) {
 			//弾を撃つ
 			enemyshot[j].x = ene.x;
-			enemyshot[j].y = ene.y+shifty;
+			enemyshot[j].y = ene.y + shifty;
 			double PI = 3.14159265358979323846264338;
 			double minrad = PI / 180.0;//1度のラジアン
 			double speed = 4.0;//速度
@@ -155,7 +156,6 @@ void twinShot( int rad, int shifty,En ene)
 			enemyshot[j].vy = speed * sin(minrad * rad);
 			enemyshot[j].enable = true;
 			break;
-
 			break;
 		}
 	}
@@ -181,7 +181,6 @@ void closerangeShot(En ene) {
 				enemyshot[j].vy = speed;
 			}
 			enemyshot[j].enable = true;
-
 			break;
 		}
 	}
@@ -198,7 +197,6 @@ void aimShot(En ene)
 			//弾を撃つ
 			enemyshot[j].x = ene.x;
 			enemyshot[j].y = ene.y;
-
 			double speed = 3.0;//速度
 			double dx = player.x - ene.x;//プレイヤーと敵のx方向の距離
 			double dy = player.y - ene.y;//プレイヤーと敵のy方向の距離
@@ -206,12 +204,10 @@ void aimShot(En ene)
 			enemyshot[j].vx = speed * (dx / d);//xの移動量
 			enemyshot[j].vy = speed * (dy / d);//yの移動量
 			enemyshot[j].enable = true;//判定が有効か否か
-
 			break;
 		}
 	}
 }
-
 //爆発発生関数
 void explosion(En ene)
 {
@@ -236,13 +232,12 @@ void updateEnemy()
 			//弾の種類に応じて
 			if (enemyshot[i].type == ENEMY1)
 			{
-				enemy[i].vx= enemy[i].vx*1,02;
-				enemy[i].vy= enemy[i].vy*1,02;
+				enemy[i].vx = enemy[i].vx * 1, 02;
+				enemy[i].vy = enemy[i].vy * 1, 02;
 			}
 			//敵を自動で動かす
 			enemy[i].x = enemy[i].x + enemy[i].vx;
 			enemy[i].y = enemy[i].y + enemy[i].vy;
-
 			//弾を発射する
 			if (canEnemyShot(enemy[i]))
 			{
@@ -261,8 +256,8 @@ void updateEnemy()
 					tripleShot(200, enemy[i]);
 				}
 				if (enemy[i].type == ENEMY5) {
-					twinShot(180,-5, enemy[i]);//真っすぐ2列で弾が飛んでくる
-					twinShot(180,5,enemy[i]);
+					twinShot(180, -5, enemy[i]);//真っすぐ2列で弾が飛んでくる
+					twinShot(180, 5, enemy[i]);
 				}
 				if (enemy[i].type == ENEMY6) {
 					straightShot(0, enemy[i]);//弾が敵を中心に放出される。
@@ -288,10 +283,8 @@ void updateEnemy()
 				if (enemy[i].type == ENEMY7) {
 					closerangeShot(enemy[i]);//プレイヤーに近いと、プレイヤーを狙って弾を打つ
 				}
-
 				enemy[i].cooltime = 100;//弾のクールタイム
 			}
-		
 			if (isHit(player, enemy[i]) && BlackHole.enable == false)
 			{
 				if (AttackCoolTime == 0)
@@ -305,12 +298,10 @@ void updateEnemy()
 					gameOverFlag = true;//ゲームオーバーフラグを立てる
 				}
 			}
-
 			if (AttackCoolTime > 0)
 			{
 				AttackCoolTime--;
 			}
-		
 			for (int j = 0; j < ShotNum; j++) {
 				//敵と弾との当たり判定
 				if (shot[j].enable == true) {
@@ -319,7 +310,7 @@ void updateEnemy()
 						//当たっている
 						enemy[i].enable = false;//敵を無効
 						shot[j].enable = false;//弾を無効
-						PlaySoundMem(explodese,DX_PLAYTYPE_BACK);//爆破エフェクトの呼び出し
+						PlaySoundMem(explodese, DX_PLAYTYPE_BACK);//爆破エフェクトの呼び出し
 						p = p + 1;//ポイント+1
 						explosion(enemy[i]);//爆発
 						break;
@@ -336,18 +327,27 @@ void updateEnemy()
 //2ndの敵の更新
 void updatesecondEnemy()
 {
+	if (enemy2[0].enable == false) {
+		q++;//１フレームごとに１点加算
+		if (q == 600) {
+			scene = cria;
+		}
+	}
 	for (int i = 0; i < EnemyNum; i++) {
 		if (enemy2[i].enable == true) {
-			//弾の種類に応じて
-			if (enemyshot[i].type == ENEMY1)
-			{
-				enemy2[i].vx = enemy2[i].vx * 1, 02;
-				enemy2[i].vy = enemy2[i].vy * 1, 02;
-			}
 			//敵を自動で動かす
-			enemy2[i].x = enemy2[i].x + enemy2[i].vx;
-			enemy2[i].y = enemy2[i].y + enemy2[i].vy;
-
+			if (enemy2[i].x >= 650) {
+				enemy2[i].x = enemy2[i].x + enemy2[i].vx;
+			}
+			if (enemy2[i].x == 648) {
+				enemy2[i].y = enemy2[i].y + enemy2[i].vy;
+			}
+			if (enemy2[i].y >= 600) {
+				enemy2[i].vy = -2;
+			}
+			if (enemy2[i].y <= 0) {
+				enemy2[i].vy = 2;
+			}
 			//弾を発射する
 			if (canEnemyShot(enemy2[i]))
 			{
@@ -366,10 +366,18 @@ void updatesecondEnemy()
 					tripleShot(200, enemy2[i]);
 				}
 				if (enemy2[i].type == ENEMY5) {
+					tripleShot(160, enemy2[i]);//
+					tripleShot(180, enemy2[i]);
+					tripleShot(200, enemy2[i]);
 					twinShot(180, -5, enemy2[i]);//
 					twinShot(180, 5, enemy2[i]);
 				}
 				if (enemy2[i].type == ENEMY6) {
+					tripleShot(160, enemy2[i]);//
+					tripleShot(180, enemy2[i]);
+					tripleShot(200, enemy2[i]);
+					twinShot(180, -5, enemy2[i]);//
+					twinShot(180, 5, enemy2[i]);
 					straightShot(0, enemy2[i]);//
 					straightShot(20, enemy2[i]);
 					straightShot(40, enemy2[i]);
@@ -391,12 +399,35 @@ void updatesecondEnemy()
 					straightShot(360, enemy2[i]);
 				}
 				if (enemy2[i].type == ENEMY7) {
+					tripleShot(160, enemy2[i]);//
+					tripleShot(180, enemy2[i]);
+					tripleShot(200, enemy2[i]);
+					twinShot(180, -5, enemy2[i]);//
+					twinShot(180, 5, enemy2[i]);
+					straightShot(0, enemy2[i]);//
+					straightShot(20, enemy2[i]);
+					straightShot(40, enemy2[i]);
+					straightShot(60, enemy2[i]);
+					straightShot(80, enemy2[i]);
+					straightShot(100, enemy2[i]);
+					straightShot(120, enemy2[i]);
+					straightShot(140, enemy2[i]);
+					straightShot(160, enemy2[i]);
+					straightShot(180, enemy2[i]);
+					straightShot(200, enemy2[i]);
+					straightShot(220, enemy2[i]);
+					straightShot(240, enemy2[i]);
+					straightShot(260, enemy2[i]);
+					straightShot(280, enemy2[i]);
+					straightShot(300, enemy2[i]);
+					straightShot(320, enemy2[i]);
+					straightShot(340, enemy2[i]);
+					straightShot(360, enemy2[i]);
 					closerangeShot(enemy2[i]);//
+				}if (enemy2[i].type == ENEMY8) {
 				}
-
 				enemy2[i].cooltime = 100;//
 			}
-
 			if (isHit(player, enemy2[i]) && BlackHole.enable == false)
 			{
 				if (AttackCoolTime == 0)
@@ -410,23 +441,24 @@ void updatesecondEnemy()
 					gameOverFlag = true;//ゲームオーバーフラグを立てる
 				}
 			}
-
 			if (AttackCoolTime > 0)
 			{
 				AttackCoolTime--;
 			}
-
 			for (int j = 0; j < ShotNum; j++) {
 				//敵と弾との当たり判定
 				if (shot[j].enable == true) {
 					if (isHit(shot[j], enemy2[i]))
 					{
-						//当たっている
-						enemy2[i].enable = false;//敵を無効
+						kisidahp--;
 						shot[j].enable = false;//弾を無効
-						PlaySoundMem(explodese, DX_PLAYTYPE_BACK);//爆破エフェクトの呼び出し
-						p = p + 1;//ポイント+1
-						explosion(enemy2[i]);//爆発
+						//当たっている
+						if (kisidahp == 0) {
+							enemy2[i].enable = false;//敵を無効
+							PlaySoundMem(explodese, DX_PLAYTYPE_BACK);//爆破エフェクトの呼び出し
+							explosion(enemy2[i]);//爆発
+							break;
+						}
 						break;
 					}
 				}
@@ -438,13 +470,12 @@ void updatesecondEnemy()
 		}
 	}
 }
-
 //1ndの敵の描画
 void drawEnemy()
 {
 	for (int i = 0; i < EnemyNum; i++) {
 		if (enemy[i].enable == true) {
-			DrawGraph(enemy[i].x-10, enemy[i].y-30, enemyimg,true);//敵の描画
+			DrawGraph(enemy[i].x - 10, enemy[i].y - 30, enemyimg, true);//敵の描画
 		}
 	}
 }
@@ -452,8 +483,35 @@ void drawEnemy()
 void drawsecondEnemy()
 {
 	for (int i = 0; i < EnemyNum; i++) {
+		if (1 <= kisidahp && kisidahp <= 100 && scene == second) {
+			DrawFormatString(320, 20, GetColor(25, 200, 0), "vs岸田：HP%d", kisidahp);
+		}
 		if (enemy2[i].enable == true) {
-			DrawGraph(enemy2[i].x - 10, enemy2[i].y - 30, enemyimg, true);//敵の描画
+			DrawGraph(enemy2[i].x - 10, enemy2[i].y - 40, kisidaimg, true);
+		}
+		if (scene == second && 75 <= kisidahp && kisidahp <= 100) {
+			DrawFormatString(200, 550, GetColor(255, 200, 0), "所詮下級戦士如きがこの第１００代内閣総理大臣\n岸田文雄を倒せるとでも思っているのか");
+		}
+		if (scene == second && 50 <= kisidahp && kisidahp <= 74) {
+			DrawFormatString(200, 550, GetColor(255, 200, 0), "どうだ怖気着いたか？ならばくらえ！！HigherTax!!");
+			//HigherTax 訳　増税
+			enemy2[0].type = ENEMY5;
+		}
+		if (scene == second && 30 <= kisidahp && kisidahp <= 49) {
+			DrawFormatString(200, 550, GetColor(255, 200, 0), "ふん　どうやら雑魚では無いらしいな");
+			enemy2[0].type = ENEMY6;
+		}if (scene == second && 1 <= kisidahp && kisidahp <= 29) {
+			DrawFormatString(200, 550, GetColor(255, 200, 0), "この死に損ないが！４ね！");
+			enemy2[0].type = ENEMY7;
+		}if (scene == second && kisidahp <= 0) {
+			DrawFormatString(200, 500, GetColor(255, 200, 0), "何ィ！？\nこの第１００代内閣総理大臣岸田文雄が負けるとはああああああああああああああああああああああああああああああああ");
+			enemy2[0].type = ENEMY8;
+		}if (scene == second && kisidahp <= 0 && q >= 50) {
+			DrawFormatString(200, 20, GetColor(255, 0, 0), "安倍さん聞こえますか？");
+		}if (scene == second && kisidahp <= 0 && q >= 200) {
+			DrawFormatString(230, 50, GetColor(255, 0, 0), "オレ達から貴方への");
+		}if (scene == second && kisidahp <= 0 && q >= 400) {
+			DrawFormatString(250, 80, GetColor(255, 0, 0), "鎮魂曲<レクイエム>です");
 		}
 	}
 }
@@ -462,7 +520,7 @@ bool canEnemyShot(En enemy)
 {
 	//銃が冷えている
 	if (enemy.cooltime <= 0) {
-		if(enemy.x >=0 &&
+		if (enemy.x >= 0 &&
 			enemy.x < 800 &&
 			enemy.y>0 &&
 			enemy.y < 600)
