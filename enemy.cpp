@@ -292,10 +292,23 @@ void updateEnemy()
 				enemy[i].cooltime = 100;//弾のクールタイム
 			}
 		
-			if (isHit(player, enemy[i]))
+			if (isHit(player, enemy[i]) && BlackHole.enable == false)
 			{
-				player.color = enemy[i].color;//当たっている
-				gameOverFlag = true;//ゲームオーバーフラグを立てる
+				if (AttackCoolTime == 0)
+				{
+					playerHp--;//プレイヤーのHPを減らす
+					AttackCoolTime = 30;//アタッククールタイムを作る
+					playerBar.x2--;
+				}
+				if (playerHp == 0)
+				{
+					gameOverFlag = true;//ゲームオーバーフラグを立てる
+				}
+			}
+
+			if (AttackCoolTime > 0)
+			{
+				AttackCoolTime--;
 			}
 		
 			for (int j = 0; j < ShotNum; j++) {
@@ -384,11 +397,23 @@ void updatesecondEnemy()
 				enemy2[i].cooltime = 100;//
 			}
 
-			if (isHit(player, enemy2[i]))
+			if (isHit(player, enemy2[i]) && BlackHole.enable == false)
 			{
-				
-				player.color = enemy2[i].color;//当たっている
-				gameOverFlag = true;//ゲームオーバーフラグを立てる
+				if (AttackCoolTime == 0)
+				{
+					playerHp--;//プレイヤーのHPを減らす
+					AttackCoolTime = 30;//アタッククールタイムを作る
+					playerBar.x2--;
+				}
+				if (playerHp == 0)
+				{
+					gameOverFlag = true;//ゲームオーバーフラグを立てる
+				}
+			}
+
+			if (AttackCoolTime > 0)
+			{
+				AttackCoolTime--;
 			}
 
 			for (int j = 0; j < ShotNum; j++) {

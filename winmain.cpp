@@ -77,6 +77,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 //初期化関数　引数、戻り値なし
 void init()
 {
+	initGame();
 	TitleLogo = LoadGraph("cooltext437633513189197.png");//タイトルロゴの画像
 	press= LoadGraph("cooltext437636616251046.png");//プッシュロゴの画像
 	next= LoadGraph("Cool Text - next stage 438643731255705.png");//ネクストステージロゴの画像
@@ -168,6 +169,13 @@ void roundUpdate()
 		{
 			enemy[i].enable = false;
 		}
+		BlackHole.enable = false;
+		LightRaysTrigger = false;
+		LightRaysDuration = 0;
+		for (int i = 0; i < LightRaysShotNum; i++)
+		{
+			LightRays[i].enable = false;
+		}
 	}
 	
 	DrawFormatString(310, 250, GetColor(255, 0, 0), "ラウンドクリア");
@@ -219,6 +227,8 @@ void criaUpdate()
 	updatePlayer();//プレイヤーの更新
 	
 	updateShot();//弾の更新
+	BlackHoleShot();
+	LightRaysShot();
 
 	updateEnemyShot();//敵の弾の更新
 
@@ -240,6 +250,8 @@ void Updatesecond()
 	updatePlayer();//プレイヤーの更新
 
 	updateShot();//弾の更新
+	BlackHoleShot();
+	LightRaysShot();
 
 	updateEnemyShot();//敵の弾の更新
 

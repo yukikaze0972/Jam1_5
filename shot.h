@@ -2,8 +2,18 @@
 #include "en.h"
 
 const int ShotNum = 100;
+const int LightRaysShotNum = 3000;
 extern En shot[ShotNum];//íe
+extern En BlackHole;
+extern En LightRays[LightRaysShotNum];
+extern int BlackHoleDuration;
+extern int LightRaysDuration;
+extern bool LightRaysTrigger;
+bool canLightRaysShot(En player);
 
 void initShot();//íeÇÃèâä˙âª
 void updateShot();//íeÇÃçXêV
+void BlackHoleShot();
+void LightRaysShot();
+void LightRaysShot_moto();
 void drawShot();
