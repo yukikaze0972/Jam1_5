@@ -26,6 +26,12 @@ void initPlayer()
 
 	playerHp = 100;
 	LightRaysTrigger = false;
+	playerBar.x1 = 550;
+	playerBar.x2 = 750;
+	playerBar.y1 = 20;
+	playerBar.y2 = 50;
+	playerBar.color = GetColor(255, 255, 255);
+	playerBar.fill = true;
 
 }
 
