@@ -31,6 +31,7 @@ int bg1;
 int bg2;
 int gameover2;
 int explanationbg;
+int RO;
 
 
 // プログラムは WinMain から始まります
@@ -97,6 +98,7 @@ void init()
 	bg2 = LoadGraph("niko5.jpg");
 	gameover2 = LoadGraph("cooltext438730459234063.png");
 	explanationbg= LoadGraph("image (9).png");
+	RO= LoadGraph("cooltext438733569129930.png");
 	
 	initPlayer();//プレイヤーの初期化
 	
@@ -125,7 +127,7 @@ void titleUpdate()
 		PlayMusic("maou_bgm_8bit27.mp3", DX_PLAYTYPE_LOOP); 
 	}
 	DrawGraph(0, 0, bg0, true);
-	DrawGraph(300, 350, press, true);//プッシュロゴの表示設定
+	DrawGraph(280, 350, press, true);//プッシュロゴの表示設定
 	DrawGraph(100, 250, TitleLogo, true);//タイトルロゴの表示設定
 
 }
@@ -137,6 +139,7 @@ void explanationUpdate()
 		scene = Game;//Gameシーンへの切り替え
 	}
 	DrawGraph(0, 0, explanationbg, true);
+	DrawGraph(270, 250,RO , true);
 	DrawGraph(280, 360, space, true);
 }
 
