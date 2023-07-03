@@ -773,7 +773,7 @@ void updatesecondEnemy()
 {
 	if (enemy2[0].enable == false) {
 		q++;//‚PƒtƒŒ[ƒ€‚²‚Æ‚É‚P“_‰ÁZ
-		if (q == 600) {
+		if (q == 500) {
 			scene = cria;
 		}
 	}
