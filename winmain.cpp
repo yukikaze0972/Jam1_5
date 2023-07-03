@@ -9,6 +9,7 @@
 #include "bgsprite.h"
 
 void init();//初期化関数のプロトタイプ宣言
+void explanationUpdate();//タイトル後の説明画面
 void titleUpdate();//タイトルシーンの更新関数
 void criaUpdate();//クリア画面
 void update();//更新関数のプロトタイプ宣言
@@ -29,6 +30,7 @@ int bg0;
 int bg1;
 int bg2;
 int gameover2;
+int explanationbg;
 
 
 // プログラムは WinMain から始まります
@@ -50,6 +52,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	while (ProcessMessage() == 0 && CheckHitKey(KEY_INPUT_ESCAPE) == 0) {
 		if (scene == Title) {
 			titleUpdate();//タイトル更新処理
+		}
+		else if (scene == explanation) {
+			explanationUpdate();//ゲーム更新処理の呼び出し
 		}
 		else if (scene == Game) {
 			update();//ゲーム更新処理の呼び出し
@@ -91,6 +96,7 @@ void init()
 	bg1 = LoadGraph("gameover2.png");
 	bg2 = LoadGraph("niko5.jpg");
 	gameover2 = LoadGraph("cooltext438730459234063.png");
+	explanationbg= LoadGraph("image (9).png");
 	
 	initPlayer();//プレイヤーの初期化
 	
@@ -113,7 +119,7 @@ void titleUpdate()
 	if (CheckHitKey(KEY_INPUT_RETURN) == 1)
 	{
 		//タイトル画像の描画
-		scene = Game;//Gameシーンへの切り替え
+		scene = explanation;//Gameシーンへの切り替え
 		PlayMusic("maou_bgm_8bit27.mp3", DX_PLAYTYPE_LOOP);
 		PlayMusic("maou_se_8bit24.mp3", DX_PLAYTYPE_BACK);
 		PlayMusic("maou_bgm_8bit27.mp3", DX_PLAYTYPE_LOOP); 
@@ -121,7 +127,20 @@ void titleUpdate()
 	DrawGraph(0, 0, bg0, true);
 	DrawGraph(300, 350, press, true);//プッシュロゴの表示設定
 	DrawGraph(100, 250, TitleLogo, true);//タイトルロゴの表示設定
+
 }
+
+void explanationUpdate()
+{
+	if (CheckHitKey(KEY_INPUT_SPACE) == 1)
+	{
+		scene = Game;//Gameシーンへの切り替え
+	}
+	DrawGraph(0, 0, explanationbg, true);
+	DrawGraph(280, 360, space, true);
+}
+
+
 //ゲームオーバーの更新関数
 void gameoverUpdate()
 {

@@ -4,6 +4,7 @@
 enum GameScene
 {
 	Title,
+	explanation,
 	Game,
 	stand,
 	second,
