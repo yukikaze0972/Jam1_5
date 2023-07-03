@@ -6,6 +6,8 @@
 
 En player;//プレイヤー
 int shotse;
+int daison;
+int masupa;
 int playerHp;
 bool LightRaysTrigger;
 //プレイヤーの初期化
@@ -18,7 +20,8 @@ void initPlayer()
 	player.fill = true;
 	player.cooltime = 0;
 	shotse = LoadSoundMem("maou_se_battle07.mp3");
-
+	daison = LoadSoundMem("daison.mp3");
+	masupa = LoadSoundMem("masupa.mp3");
 	playerimg= LoadGraph("UFO.png");
 
 	playerHp = 200;
@@ -89,12 +92,14 @@ void updatePlayer()
 		BlackHole.y = player.y;
 		BlackHoleDuration = 1000;
 		BlackHole.enable = true;
+		PlaySoundMem(daison, DX_PLAYTYPE_BACK);
 	}
 
 	if (CheckHitKey(KEY_INPUT_SPACE) == 1 && selectbomb == 2 && LightRaysTrigger == false)
 	{
 		LightRaysDuration = 300;
 		LightRaysTrigger = true;
+		PlaySoundMem(masupa, DX_PLAYTYPE_BACK);
 	}
 	//銃を冷やす処理
 	if (player.cooltime > 0) {
