@@ -114,8 +114,9 @@ void init()
 	initEffect();//エフェクトの初期化
 
 	initBg();//背景スプライトの初期化
-
-	PlayMusic("maou_bgm_8bit26.mp3", DX_PLAYTYPE_LOOP);//BGM
+	
+	//PlayMusic("maou_bgm_8bit26.mp3", DX_PLAYTYPE_LOOP);//BGM
+		PlayMusic("taitoru.mp3", DX_PLAYTYPE_LOOP);//BGM
 }
 //タイトルの更新関数
 void titleUpdate()
@@ -124,11 +125,11 @@ void titleUpdate()
 	{
 		//タイトル画像の描画
 		scene = explanation;//Gameシーンへの切り替え
-		PlayMusic("maou_bgm_8bit27.mp3", DX_PLAYTYPE_LOOP);
+		//PlayMusic("sentou.mp3", DX_PLAYTYPE_LOOP);
 		//PlayMusic("DEEP IN THE HEATWAVE  SOUND HOLIC　Vo 小寺可南子(THE ARCADE EDIT).mp3", DX_PLAYTYPE_LOOP);
 		PlayMusic("maou_se_8bit24.mp3", DX_PLAYTYPE_BACK);
 		//PlayMusic("DEEP IN THE HEATWAVE  SOUND HOLIC　Vo 小寺可南子(THE ARCADE EDIT).mp3", DX_PLAYTYPE_LOOP);
-		PlayMusic("maou_bgm_8bit27.mp3", DX_PLAYTYPE_LOOP); 
+		//PlayMusic("sentou.mp3", DX_PLAYTYPE_LOOP); 
 	}
 	DrawGraph(0, 0, bg0, true);
 	DrawGraph(280, 350, press, true);//プッシュロゴの表示設定
@@ -142,7 +143,8 @@ void explanationUpdate()
 	{
 		scene = Game;//Gameシーンへの切り替え
 		//PlayMusic("DEEP IN THE HEATWAVE  SOUND HOLIC　Vo 小寺可南子(THE ARCADE EDIT).mp3", DX_PLAYTYPE_LOOP);
-		
+		PlayMusic("sentou.mp3", DX_PLAYTYPE_LOOP);
+		PlayMusic("sentou.mp3", DX_PLAYTYPE_LOOP);
 	}
 	DrawGraph(0, 0, explanationbg, true);
 	DrawGraph(270, 250,RO , true);
