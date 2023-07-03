@@ -24,7 +24,7 @@ void initPlayer()
 	masupa = LoadSoundMem("masupa.mp3");
 	playerimg= LoadGraph("UFO.png");
 
-	playerHp = 200;
+	playerHp = 100;
 	LightRaysTrigger = false;
 
 }
