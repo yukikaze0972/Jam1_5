@@ -26,6 +26,12 @@ void initPlayer()
 
 	playerHp = 100;
 	LightRaysTrigger = false;
+	playerBar.x1 = 550;
+	playerBar.x2 = 750;
+	playerBar.y1 = 20;
+	playerBar.y2 = 50;
+	playerBar.color = GetColor(255, 255, 255);
+	playerBar.fill = true;
 
 }
 
@@ -90,14 +96,14 @@ void updatePlayer()
 	{
 		BlackHole.x = player.x;
 		BlackHole.y = player.y;
-		BlackHoleDuration = 1000;
+		BlackHoleDuration = 380;
 		BlackHole.enable = true;
 		PlaySoundMem(daison, DX_PLAYTYPE_BACK);
 	}
 
 	if (CheckHitKey(KEY_INPUT_SPACE) == 1 && selectbomb == 2 && LightRaysTrigger == false)
 	{
-		LightRaysDuration = 300;
+		LightRaysDuration = 250;
 		LightRaysTrigger = true;
 		PlaySoundMem(masupa, DX_PLAYTYPE_BACK);
 	}

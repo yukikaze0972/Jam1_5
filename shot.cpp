@@ -237,14 +237,14 @@ void LightRaysShot()
 			if (enemy[i].x <= 800 &&
 				enemy[i].x > 0 &&
 				enemy[i].y <= 600 &&
-				enemy[i].y > 0) {
+				enemy[i].y > 0 && enemy[i].enable == true) {
 				enemy[i].enable = false;
 				p++;
 			}
 			if (enemy2[i].x <= 800 &&
 				enemy2[i].x > 0 &&
 				enemy2[i].y <= 600 &&
-				enemy2[i].y > 0) {
+				enemy2[i].y > 0 && enemy2[i].enable == true) {
 				kisidahp -= 2;
 				p++;
 

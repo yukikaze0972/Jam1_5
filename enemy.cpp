@@ -173,7 +173,7 @@ void initEnemy()
 		a += 100;
 	}
 
-	a = 20;
+	a = 10;
 	for (int i = 20; i < 25; i++)
 	{
 		enemy[i].x = 2000;
@@ -190,7 +190,7 @@ void initEnemy()
 	}
 
 
-	a = 20;
+	a = 30;
 	for (int i = 25; i < 30; i++)
 	{
 		enemy[i].x = 2200;
@@ -206,7 +206,7 @@ void initEnemy()
 		a += 100;
 	}
 
-	a = 20;
+	a = 10;
 	for (int i = 30; i < 35; i++)
 	{
 		enemy[i].x = 2500;
@@ -222,7 +222,7 @@ void initEnemy()
 		a += 125;
 	}
 
-	a = 20;
+	a = 25;
 	for (int i = 35; i < 40; i++)
 	{
 		enemy[i].x = 2700;
@@ -239,7 +239,7 @@ void initEnemy()
 	}
 
 
-	a = 20;
+	a = 25;
 	for (int i = 40; i < 45; i++)
 	{
 		enemy[i].x = 2800;
@@ -255,7 +255,7 @@ void initEnemy()
 		a += 110;
 	}
 
-	a = 20;
+	a = 10;
 	for (int i = 45; i < 50; i++)
 	{
 		enemy[i].x = 2900;
@@ -271,7 +271,7 @@ void initEnemy()
 		a += 130;
 	}
 
-	a = 20;
+	a = 50;
 	for (int i = 50; i < 55; i++)
 	{
 		enemy[i].x = 3000;
@@ -287,7 +287,7 @@ void initEnemy()
 		a += 100;
 	}
 
-	a = 20;
+	a = 5;
 	for (int i = 55; i < 60; i++)
 	{
 		enemy[i].x = 3100;
@@ -303,7 +303,7 @@ void initEnemy()
 		a += 125;
 	}
 
-	a = 20;
+	a = 10;
 	for (int i = 60; i < 65; i++)
 	{
 		enemy[i].x = 3200;
@@ -319,7 +319,7 @@ void initEnemy()
 		a += 110;
 	}
 
-	a = 20;
+	a = 40;
 	for (int i = 65; i < 70; i++)
 	{
 		enemy[i].x = 3200;
@@ -351,7 +351,7 @@ void initEnemy()
 		a += 130;
 	}
 
-	a = 20;
+	a = 10;
 	for (int i = 75; i < 80; i++)
 	{
 		enemy[i].x = 3400;
@@ -367,7 +367,7 @@ void initEnemy()
 		a += 100;
 	}
 
-	a = 20;
+	a = 8;
 	for (int i = 80; i < 85; i++)
 	{
 		enemy[i].x = 3400;
@@ -383,7 +383,7 @@ void initEnemy()
 		a += 100;
 	}
 
-	a = 20;
+	a = 15;
 	for (int i = 85; i < 90; i++)
 	{
 		enemy[i].x = 3500;
@@ -415,7 +415,7 @@ void initEnemy()
 		a += 120;
 	}
 
-	a = 20;
+	a = 15;
 	for (int i = 95; i < 100; i++)
 	{
 		enemy[i].x = 3700;
@@ -432,7 +432,7 @@ void initEnemy()
 	}
 
 
-	a = 20;
+	a = 30;
 	for (int i = 100; i < 105; i++)
 	{
 		enemy[i].x = 3700;
@@ -448,7 +448,7 @@ void initEnemy()
 		a += 100;
 	}
 
-	a = 20;
+	a = 15;
 	for (int i = 105; i < 110; i++)
 	{
 		enemy[i].x = 3800;
@@ -481,7 +481,7 @@ void initEnemy()
 	}
 
 
-	a = 20;
+	a = 10;
 	for (int i = 115; i < 120; i++)
 	{
 		enemy[i].x = 4000;
@@ -498,7 +498,7 @@ void initEnemy()
 	}
 
 
-	a = 20;
+	a = 8;
 	for (int i = 120; i < 125; i++)
 	{
 		enemy[i].x = 4100;
@@ -514,7 +514,7 @@ void initEnemy()
 		a += 120;
 	}
 
-	a = 20;
+	a = 10;
 	for (int i = 125; i < 130; i++)
 	{
 		enemy[i].x = 4200;
@@ -528,6 +528,104 @@ void initEnemy()
 		enemy[i].type = ENEMY3;
 
 		a += 100;
+	}
+
+
+	a = 20;
+	for (int i = 130; i < 135; i++)
+	{
+		enemy[i].x = 4300;
+		enemy[i].y = a + a;
+		enemy[i].r = 30;
+		enemy[i].color = GetColor(255, 0, 0);
+		enemy[i].fill = true;
+		enemy[i].enable = true;
+		enemy[i].vx = -2.0;
+		enemy[i].vy = 0.0;
+		enemy[i].type = ENEMY3;
+
+		a += 80;
+	}
+
+	a = 6;
+	for (int i = 140; i < 145; i++)
+	{
+		enemy[i].x = 4400;
+		enemy[i].y = a + a;
+		enemy[i].r = 30;
+		enemy[i].color = GetColor(255, 0, 0);
+		enemy[i].fill = true;
+		enemy[i].enable = true;
+		enemy[i].vx = -2.0;
+		enemy[i].vy = 0.0;
+		enemy[i].type = ENEMY3;
+
+		a += 50;
+	}
+
+	a = 10;
+	for (int i = 145; i < 150; i++)
+	{
+		enemy[i].x = 4500;
+		enemy[i].y = a + a;
+		enemy[i].r = 30;
+		enemy[i].color = GetColor(255, 0, 0);
+		enemy[i].fill = true;
+		enemy[i].enable = true;
+		enemy[i].vx = -2.0;
+		enemy[i].vy = 0.0;
+		enemy[i].type = ENEMY3;
+
+		a += 50;
+	}
+
+	a = 20;
+	for (int i = 150; i < 155; i++)
+	{
+		enemy[i].x = 4600;
+		enemy[i].y = a + a;
+		enemy[i].r = 30;
+		enemy[i].color = GetColor(255, 0, 0);
+		enemy[i].fill = true;
+		enemy[i].enable = true;
+		enemy[i].vx = -2.0;
+		enemy[i].vy = 0.0;
+		enemy[i].type = ENEMY3;
+
+		a += 100;
+	}
+
+	a = 50;
+	for (int i = 150; i < 155; i++)
+	{
+		enemy[i].x = 4700;
+		enemy[i].y = a + a;
+		enemy[i].r = 30;
+		enemy[i].color = GetColor(255, 0, 0);
+		enemy[i].fill = true;
+		enemy[i].enable = true;
+		enemy[i].vx = -2.0;
+		enemy[i].vy = 0.0;
+		enemy[i].type = ENEMY3;
+
+		a += 120;
+	}
+
+
+	a = 10;
+	for (int i = 155; i < 165; i++)
+	{
+		enemy[i].x = 4800;
+		enemy[i].y = a + a;
+		enemy[i].r = 30;
+		enemy[i].color = GetColor(255, 0, 0);
+		enemy[i].fill = true;
+		enemy[i].enable = true;
+		enemy[i].vx = -2.0;
+		enemy[i].vy = 0.0;
+		enemy[i].type = ENEMY3;
+
+		a += 50;
 	}
 
 	//2ステージ目の敵
