@@ -773,7 +773,7 @@ void updatesecondEnemy()
 {
 	if (enemy2[0].enable == false) {
 		q++;//１フレームごとに１点加算
-		if (q == 600) {
+		if (q == 500) {
 			scene = cria;
 		}
 	}
@@ -955,7 +955,7 @@ void drawsecondEnemy()
 			DrawFormatString(130, 20, GetColor(255, 0, 0), "安倍さん聞こえますか？");
 		}if (scene == second && kisidahp <= 0 && q >= 200) {
 			DrawFormatString(150, 50, GetColor(255, 0, 0), "オレ達から貴方への");
-		}if (scene == second && kisidahp <= 0 && q >= 400) {
+		}if (scene == second && kisidahp <= 0 && q >= 300) {
 			DrawFormatString(150, 80, GetColor(255, 0, 0), "鎮魂曲<レクイエム>です");
 		}
 	}
