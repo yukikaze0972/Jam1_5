@@ -25,6 +25,10 @@ int press;//プッシュロゴS
 int next;//ネクストステージロゴ
 int space;//プッシュスペースのロゴ
 int end;//エンドエンターロゴ
+int bg0;
+int bg1;
+int bg2;
+int gameover2;
 
 
 // プログラムは WinMain から始まります
@@ -83,6 +87,10 @@ void init()
 	next= LoadGraph("Cool Text - next stage 438643731255705.png");//ネクストステージロゴの画像
     end= LoadGraph("Cool Text - end enter 438643686421366.png");//エンドエンターのロゴ画像
 	space = LoadGraph("Cool Text - push space 438650699222967.png");//プッシュスペースのロゴ画像
+	bg0=LoadGraph("titler image .png");
+	bg1 = LoadGraph("gameover2.png");
+	bg2 = LoadGraph("niko5.jpg");
+	gameover2 = LoadGraph("cooltext438730459234063.png");
 	
 	initPlayer();//プレイヤーの初期化
 	
@@ -110,7 +118,7 @@ void titleUpdate()
 		PlayMusic("maou_se_8bit24.mp3", DX_PLAYTYPE_BACK);
 		PlayMusic("maou_bgm_8bit27.mp3", DX_PLAYTYPE_LOOP); 
 	}
-	
+	DrawGraph(0, 0, bg0, true);
 	DrawGraph(300, 350, press, true);//プッシュロゴの表示設定
 	DrawGraph(100, 250, TitleLogo, true);//タイトルロゴの表示設定
 }
@@ -143,7 +151,8 @@ void gameoverUpdate()
 	DrawFormatString(310, 250, GetColor(255, 0, 0), "ゆーあーでっと");//ゲームオーバー時の文字の表示
 	DrawFormatString(320, 275, GetColor(255, 255, 0), "タイム %d 点", t);//タイムの表示設定
 	DrawFormatString(320, 300, GetColor(255, 255, 0), "スコア %d 点", p);//スコアの表示設定
-	DrawGraph(200, 190, next, true);
+	DrawGraph(0, 0, bg1, true);
+	DrawGraph(200, 190, gameover2, true);
 	DrawGraph(260, 350, space, true);
 	PlayMusic("maou_bgm_healing16.mp3", DX_PLAYTYPE_LOOP);//ゲームオーバー時に流す予定のBGMですが、現在機能していません
 }
@@ -177,7 +186,7 @@ void roundUpdate()
 			LightRays[i].enable = false;
 		}
 	}
-	
+	DrawGraph(0, 0, bg2, true);
 	DrawFormatString(310, 250, GetColor(255, 0, 0), "ラウンドクリア");
 	DrawFormatString(320, 275, GetColor(255, 255, 0), "タイム %d 点", t);
 	DrawFormatString(320, 300, GetColor(255, 255, 0), "スコア %d 点", p);
