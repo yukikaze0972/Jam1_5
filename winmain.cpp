@@ -32,6 +32,7 @@ int bg2;
 int gameover2;
 int explanationbg;
 int RO;
+int rond;
 
 
 // プログラムは WinMain から始まります
@@ -99,6 +100,7 @@ void init()
 	gameover2 = LoadGraph("cooltext438730459234063.png");
 	explanationbg= LoadGraph("image (9).png");
 	RO= LoadGraph("cooltext438733569129930.png");
+	rond = LoadGraph("cooltext438730777439596.png");
 	
 	initPlayer();//プレイヤーの初期化
 	
@@ -123,7 +125,9 @@ void titleUpdate()
 		//タイトル画像の描画
 		scene = explanation;//Gameシーンへの切り替え
 		PlayMusic("maou_bgm_8bit27.mp3", DX_PLAYTYPE_LOOP);
+		//PlayMusic("DEEP IN THE HEATWAVE  SOUND HOLIC　Vo 小寺可南子(THE ARCADE EDIT).mp3", DX_PLAYTYPE_LOOP);
 		PlayMusic("maou_se_8bit24.mp3", DX_PLAYTYPE_BACK);
+		//PlayMusic("DEEP IN THE HEATWAVE  SOUND HOLIC　Vo 小寺可南子(THE ARCADE EDIT).mp3", DX_PLAYTYPE_LOOP);
 		PlayMusic("maou_bgm_8bit27.mp3", DX_PLAYTYPE_LOOP); 
 	}
 	DrawGraph(0, 0, bg0, true);
@@ -137,6 +141,8 @@ void explanationUpdate()
 	if (CheckHitKey(KEY_INPUT_SPACE) == 1)
 	{
 		scene = Game;//Gameシーンへの切り替え
+		//PlayMusic("DEEP IN THE HEATWAVE  SOUND HOLIC　Vo 小寺可南子(THE ARCADE EDIT).mp3", DX_PLAYTYPE_LOOP);
+		
 	}
 	DrawGraph(0, 0, explanationbg, true);
 	DrawGraph(270, 250,RO , true);
@@ -209,7 +215,7 @@ void roundUpdate()
 		}
 	}
 	DrawGraph(0, 0, bg2, true);
-	DrawFormatString(310, 250, GetColor(255, 0, 0), "ラウンドクリア");
+	DrawGraph(200, 190,rond , true);
 	DrawFormatString(320, 275, GetColor(255, 255, 0), "タイム %d 点", t);
 	DrawFormatString(320, 300, GetColor(255, 255, 0), "スコア %d 点", p);
 	DrawGraph(200, 350, next, true);
@@ -270,6 +276,7 @@ void criaUpdate()
 	updateBg();//背景スプライトの描画
 
 	draw();//描画処理
+
 	
 	
 }
