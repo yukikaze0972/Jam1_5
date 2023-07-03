@@ -951,11 +951,11 @@ void drawsecondEnemy()
 		}if (scene == second && kisidahp <= 0) {
 			DrawFormatString(100, 500, GetColor(255, 0, 0), "âΩÉBÅIÅH\nÇ±ÇÃëÊÇPÇOÇOë„ì‡ätëçóùëÂêbä›ìcï∂óYÇ™ïâÇØÇÈÇ∆ÇÕÇ†Ç†Ç†Ç†Ç†Ç†Ç†Ç†Ç†Ç†Ç†Ç†Ç†Ç†Ç†Ç†Ç†Ç†Ç†Ç†Ç†Ç†Ç†Ç†Ç†Ç†Ç†Ç†Ç†Ç†Ç†Ç†");
 			enemy2[0].type = ENEMY8;
-		}if (scene == second && kisidahp <= 0 && q >= 50) {
+		}if (scene == second && kisidahp <= 0 && q >= 100) {
 			DrawFormatString(130, 20, GetColor(255, 0, 0), "à¿î{Ç≥ÇÒï∑Ç±Ç¶Ç‹Ç∑Ç©ÅH");
 		}if (scene == second && kisidahp <= 0 && q >= 200) {
 			DrawFormatString(150, 50, GetColor(255, 0, 0), "ÉIÉåíBÇ©ÇÁãMï˚Ç÷ÇÃ");
-		}if (scene == second && kisidahp <= 0 && q >= 400) {
+		}if (scene == second && kisidahp <= 0 && q >= 300) {
 			DrawFormatString(150, 80, GetColor(255, 0, 0), "í¡ç∞ã»<ÉåÉNÉCÉGÉÄ>Ç≈Ç∑");
 		}
 	}
