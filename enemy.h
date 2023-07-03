@@ -1,6 +1,6 @@
 #pragma once
 #include "en.h"
-const int EnemyNum = 100;//“G‚Ì”
+const int EnemyNum = 300;//“G‚Ì”
 extern En enemy[EnemyNum];//“G
 extern En enemy2[EnemyNum];//“G
 extern int enemy1img;

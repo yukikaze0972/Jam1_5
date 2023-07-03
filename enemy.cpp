@@ -157,11 +157,11 @@ void initEnemy()
 	enemy[13].vy = 0.0;
 	enemy[13].type = ENEMY3;
 
-	int a = 0;
+	int a = 20;
 	for (int i = 14; i < 20; i++)
 	{
 		enemy[i].x = 1900;
-		enemy[i].y = a + 100;
+		enemy[i].y = a + a;
 		enemy[i].r = 30;
 		enemy[i].color = GetColor(255, 0, 0);
 		enemy[i].fill = true;
@@ -173,11 +173,11 @@ void initEnemy()
 		a += 100;
 	}
 
-	a = 0;
+	a = 20;
 	for (int i = 20; i < 25; i++)
 	{
 		enemy[i].x = 2000;
-		enemy[i].y = a + 100;
+		enemy[i].y = a + a;
 		enemy[i].r = 30;
 		enemy[i].color = GetColor(255, 0, 0);
 		enemy[i].fill = true;
@@ -190,11 +190,11 @@ void initEnemy()
 	}
 
 
-	a = 0;
+	a = 20;
 	for (int i = 25; i < 30; i++)
 	{
 		enemy[i].x = 2200;
-		enemy[i].y = a + 100;
+		enemy[i].y = a + a;
 		enemy[i].r = 30;
 		enemy[i].color = GetColor(255, 0, 0);
 		enemy[i].fill = true;
@@ -206,11 +206,11 @@ void initEnemy()
 		a += 100;
 	}
 
-	a = 0;
+	a = 20;
 	for (int i = 30; i < 35; i++)
 	{
 		enemy[i].x = 2500;
-		enemy[i].y = a + 100;
+		enemy[i].y = a + a;
 		enemy[i].r = 30;
 		enemy[i].color = GetColor(255, 0, 0);
 		enemy[i].fill = true;
@@ -222,11 +222,11 @@ void initEnemy()
 		a += 125;
 	}
 
-	a = 0;
-	for (int i = 35; i < 30; i++)
+	a = 20;
+	for (int i = 35; i < 40; i++)
 	{
 		enemy[i].x = 2700;
-		enemy[i].y = a + 100;
+		enemy[i].y = a + a;
 		enemy[i].r = 30;
 		enemy[i].color = GetColor(255, 0, 0);
 		enemy[i].fill = true;
@@ -238,11 +238,44 @@ void initEnemy()
 		a += 100;
 	}
 
-	a = 0;
-	for (int i = 35; i < 30; i++)
+
+	a = 20;
+	for (int i = 40; i < 45; i++)
 	{
-		enemy[i].x = 2700;
-		enemy[i].y = a + 100;
+		enemy[i].x = 2800;
+		enemy[i].y = a + a;
+		enemy[i].r = 30;
+		enemy[i].color = GetColor(255, 0, 0);
+		enemy[i].fill = true;
+		enemy[i].enable = true;
+		enemy[i].vx = -2.0;
+		enemy[i].vy = 0.0;
+		enemy[i].type = ENEMY3;
+
+		a += 110;
+	}
+
+	a = 20;
+	for (int i = 45; i < 50; i++)
+	{
+		enemy[i].x = 2900;
+		enemy[i].y = a + a;
+		enemy[i].r = 30;
+		enemy[i].color = GetColor(255, 0, 0);
+		enemy[i].fill = true;
+		enemy[i].enable = true;
+		enemy[i].vx = -2.0;
+		enemy[i].vy = 0.0;
+		enemy[i].type = ENEMY3;
+
+		a += 130;
+	}
+
+	a = 20;
+	for (int i = 50; i < 55; i++)
+	{
+		enemy[i].x = 3000;
+		enemy[i].y = a + a;
 		enemy[i].r = 30;
 		enemy[i].color = GetColor(255, 0, 0);
 		enemy[i].fill = true;
@@ -253,6 +286,250 @@ void initEnemy()
 
 		a += 100;
 	}
+
+	a = 20;
+	for (int i = 55; i < 60; i++)
+	{
+		enemy[i].x = 3100;
+		enemy[i].y = a + a;
+		enemy[i].r = 30;
+		enemy[i].color = GetColor(255, 0, 0);
+		enemy[i].fill = true;
+		enemy[i].enable = true;
+		enemy[i].vx = -2.0;
+		enemy[i].vy = 0.0;
+		enemy[i].type = ENEMY3;
+
+		a += 125;
+	}
+
+	a = 20;
+	for (int i = 60; i < 65; i++)
+	{
+		enemy[i].x = 3200;
+		enemy[i].y = a + a;
+		enemy[i].r = 30;
+		enemy[i].color = GetColor(255, 0, 0);
+		enemy[i].fill = true;
+		enemy[i].enable = true;
+		enemy[i].vx = -2.0;
+		enemy[i].vy = 0.0;
+		enemy[i].type = ENEMY3;
+
+		a += 110;
+	}
+
+	a = 20;
+	for (int i = 65; i < 70; i++)
+	{
+		enemy[i].x = 3200;
+		enemy[i].y = a + a;
+		enemy[i].r = 30;
+		enemy[i].color = GetColor(255, 0, 0);
+		enemy[i].fill = true;
+		enemy[i].enable = true;
+		enemy[i].vx = -2.0;
+		enemy[i].vy = 0.0;
+		enemy[i].type = ENEMY3;
+
+		a += 110;
+	}
+
+	a = 20;
+	for (int i = 70; i < 75; i++)
+	{
+		enemy[i].x = 3300;
+		enemy[i].y = a + a;
+		enemy[i].r = 30;
+		enemy[i].color = GetColor(255, 0, 0);
+		enemy[i].fill = true;
+		enemy[i].enable = true;
+		enemy[i].vx = -2.0;
+		enemy[i].vy = 0.0;
+		enemy[i].type = ENEMY3;
+
+		a += 130;
+	}
+
+	a = 20;
+	for (int i = 75; i < 80; i++)
+	{
+		enemy[i].x = 3400;
+		enemy[i].y = a + a;
+		enemy[i].r = 30;
+		enemy[i].color = GetColor(255, 0, 0);
+		enemy[i].fill = true;
+		enemy[i].enable = true;
+		enemy[i].vx = -2.0;
+		enemy[i].vy = 0.0;
+		enemy[i].type = ENEMY3;
+
+		a += 100;
+	}
+
+	a = 20;
+	for (int i = 80; i < 85; i++)
+	{
+		enemy[i].x = 3400;
+		enemy[i].y = a + a;
+		enemy[i].r = 30;
+		enemy[i].color = GetColor(255, 0, 0);
+		enemy[i].fill = true;
+		enemy[i].enable = true;
+		enemy[i].vx = -2.0;
+		enemy[i].vy = 0.0;
+		enemy[i].type = ENEMY3;
+
+		a += 100;
+	}
+
+	a = 20;
+	for (int i = 85; i < 90; i++)
+	{
+		enemy[i].x = 3500;
+		enemy[i].y = a + a;
+		enemy[i].r = 30;
+		enemy[i].color = GetColor(255, 0, 0);
+		enemy[i].fill = true;
+		enemy[i].enable = true;
+		enemy[i].vx = -2.0;
+		enemy[i].vy = 0.0;
+		enemy[i].type = ENEMY3;
+
+		a += 120;
+	}
+
+	a = 20;
+	for (int i = 90; i < 95; i++)
+	{
+		enemy[i].x = 3600;
+		enemy[i].y = a + a;
+		enemy[i].r = 30;
+		enemy[i].color = GetColor(255, 0, 0);
+		enemy[i].fill = true;
+		enemy[i].enable = true;
+		enemy[i].vx = -2.0;
+		enemy[i].vy = 0.0;
+		enemy[i].type = ENEMY3;
+
+		a += 120;
+	}
+
+	a = 20;
+	for (int i = 95; i < 100; i++)
+	{
+		enemy[i].x = 3700;
+		enemy[i].y = a + a;
+		enemy[i].r = 30;
+		enemy[i].color = GetColor(255, 0, 0);
+		enemy[i].fill = true;
+		enemy[i].enable = true;
+		enemy[i].vx = -2.0;
+		enemy[i].vy = 0.0;
+		enemy[i].type = ENEMY3;
+
+		a += 110;
+	}
+
+
+	a = 20;
+	for (int i = 100; i < 105; i++)
+	{
+		enemy[i].x = 3700;
+		enemy[i].y = a + a;
+		enemy[i].r = 30;
+		enemy[i].color = GetColor(255, 0, 0);
+		enemy[i].fill = true;
+		enemy[i].enable = true;
+		enemy[i].vx = -2.0;
+		enemy[i].vy = 0.0;
+		enemy[i].type = ENEMY3;
+
+		a += 100;
+	}
+
+	a = 20;
+	for (int i = 105; i < 110; i++)
+	{
+		enemy[i].x = 3800;
+		enemy[i].y = a + a;
+		enemy[i].r = 30;
+		enemy[i].color = GetColor(255, 0, 0);
+		enemy[i].fill = true;
+		enemy[i].enable = true;
+		enemy[i].vx = -2.0;
+		enemy[i].vy = 0.0;
+		enemy[i].type = ENEMY3;
+
+		a += 130;
+	}
+
+	a = 20;
+	for (int i = 110; i < 115; i++)
+	{
+		enemy[i].x = 3900;
+		enemy[i].y = a + a;
+		enemy[i].r = 30;
+		enemy[i].color = GetColor(255, 0, 0);
+		enemy[i].fill = true;
+		enemy[i].enable = true;
+		enemy[i].vx = -2.0;
+		enemy[i].vy = 0.0;
+		enemy[i].type = ENEMY3;
+
+		a += 110;
+	}
+
+
+	a = 20;
+	for (int i = 115; i < 120; i++)
+	{
+		enemy[i].x = 4000;
+		enemy[i].y = a + a;
+		enemy[i].r = 30;
+		enemy[i].color = GetColor(255, 0, 0);
+		enemy[i].fill = true;
+		enemy[i].enable = true;
+		enemy[i].vx = -2.0;
+		enemy[i].vy = 0.0;
+		enemy[i].type = ENEMY3;
+
+		a += 100;
+	}
+
+
+	a = 20;
+	for (int i = 120; i < 125; i++)
+	{
+		enemy[i].x = 4100;
+		enemy[i].y = a + a;
+		enemy[i].r = 30;
+		enemy[i].color = GetColor(255, 0, 0);
+		enemy[i].fill = true;
+		enemy[i].enable = true;
+		enemy[i].vx = -2.0;
+		enemy[i].vy = 0.0;
+		enemy[i].type = ENEMY3;
+
+		a += 120;
+	}
+
+	a = 20;
+	for (int i = 125; i < 130; i++)
+	{
+		enemy[i].x = 4200;
+		enemy[i].y = a + a;
+		enemy[i].r = 30;
+		enemy[i].color = GetColor(255, 0, 0);
+		enemy[i].fill = true;
+		enemy[i].enable = true;
+		enemy[i].vx = -2.0;
+		enemy[i].vy = 0.0;
+		enemy[i].type = ENEMY3;
+
+		a += 100;
+	}
+
 	//2ƒXƒe[ƒW–Ú‚Ì“G
 	//1‘Ì–Ú‚Ì“G
 	enemy2[0].x = 900;
@@ -649,18 +926,19 @@ void drawEnemy()
 //2nd‚Ì“G‚Ì•`‰æ
 void drawsecondEnemy()
 {
+	
 	for (int i = 0; i < EnemyNum; i++) {
 		if (1 <= kisidahp && kisidahp <= 100 && scene == second) {
-			DrawFormatString(300, 30, GetColor(25, 200, 0), "vsŠÝ“cFHP%d", kisidahp);
+			DrawFormatString(320, 20, GetColor(25, 200, 0), "vsŠÝ“cFHP%d", kisidahp);
 		}
 		if (enemy2[i].enable == true) {
 			DrawGraph(enemy2[i].x - 10, enemy2[i].y - 40, kisidaimg, true);
 		}
 		if (scene == second && 75 <= kisidahp && kisidahp <= 100) {
-			DrawFormatString(200, 550, GetColor(255, 0, 0), "Š‘F‰º‹‰íŽm”@‚«‚ª‚±‚Ì‘æ‚P‚O‚O‘ã“àŠt‘—‘åb\nŠÝ“c•¶—Y‚ð“|‚¹‚é‚Æ‚Å‚àŽv‚Á‚Ä‚¢‚é‚Ì‚©");
+			DrawFormatString(100, 550, GetColor(255, 0, 0), "Š‘F‰º‹‰íŽm”@‚«‚ª‚±‚Ì‘æ‚P‚O‚O‘ã“àŠt‘—‘åb\nŠÝ“c•¶—Y‚ð“|‚¹‚é‚Æ‚Å‚àŽv‚Á‚Ä‚¢‚é‚Ì‚©");
 		}
 		if (scene == second && 50 <= kisidahp && kisidahp <= 74) {
-			DrawFormatString(200, 550, GetColor(255, 0, 0), "‚Ç‚¤‚¾•|‹C’…‚¢‚½‚©H‚È‚ç‚Î‚­‚ç‚¦IIHigherTax!!");
+			DrawFormatString(100, 550, GetColor(255, 0, 0), "‚Ç‚¤‚¾•|‹C’…‚¢‚½‚©H‚È‚ç‚Î‚­‚ç‚¦IIHigherTax!!");
 			//HigherTax –ó@‘Å
 			enemy2[0].type = ENEMY5;
 		}
