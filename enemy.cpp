@@ -926,7 +926,7 @@ void drawEnemy()
 //2ndの敵の描画
 void drawsecondEnemy()
 {
-	
+	SetFontSize(20);
 	for (int i = 0; i < EnemyNum; i++) {
 		if (1 <= kisidahp && kisidahp <= 100 && scene == second) {
 			DrawFormatString(320, 20, GetColor(25, 200, 0), "vs岸田：HP%d", kisidahp);
@@ -943,20 +943,20 @@ void drawsecondEnemy()
 			enemy2[0].type = ENEMY5;
 		}
 		if (scene == second && 30 <= kisidahp && kisidahp <= 49) {
-			DrawFormatString(200, 550, GetColor(255, 0, 0), "ふん　どうやら雑魚では無いらしいな");
+			DrawFormatString(100, 550, GetColor(255, 0, 0), "ふん　どうやら雑魚では無いらしいな");
 			enemy2[0].type = ENEMY6;
 		}if (scene == second && 1 <= kisidahp && kisidahp <= 29) {
-			DrawFormatString(200, 550, GetColor(255, 0, 0), "この死に損ないが！４ね！");
+			DrawFormatString(100, 550, GetColor(255, 0, 0), "この死に損ないが！４ね！");
 			enemy2[0].type = ENEMY7;
 		}if (scene == second && kisidahp <= 0) {
-			DrawFormatString(200, 500, GetColor(255, 0, 0), "何ィ！？\nこの第１００代内閣総理大臣岸田文雄が負けるとはああああああああああああああああああああああああああああああああ");
+			DrawFormatString(100, 500, GetColor(255, 0, 0), "何ィ！？\nこの第１００代内閣総理大臣岸田文雄が負けるとはああああああああああああああああああああああああああああああああ");
 			enemy2[0].type = ENEMY8;
 		}if (scene == second && kisidahp <= 0 && q >= 50) {
-			DrawFormatString(200, 20, GetColor(255, 0, 0), "安倍さん聞こえますか？");
+			DrawFormatString(130, 20, GetColor(255, 0, 0), "安倍さん聞こえますか？");
 		}if (scene == second && kisidahp <= 0 && q >= 200) {
-			DrawFormatString(230, 50, GetColor(255, 0, 0), "オレ達から貴方への");
+			DrawFormatString(150, 50, GetColor(255, 0, 0), "オレ達から貴方への");
 		}if (scene == second && kisidahp <= 0 && q >= 400) {
-			DrawFormatString(250, 80, GetColor(255, 0, 0), "鎮魂曲<レクイエム>です");
+			DrawFormatString(150, 80, GetColor(255, 0, 0), "鎮魂曲<レクイエム>です");
 		}
 	}
 }

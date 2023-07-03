@@ -119,7 +119,7 @@ void SelectBomb() {
 //ゲーム情報の描画
 void drawGame()
 {
-
+	SetFontSize(15);
 	DrawFormatString(0, 0, GetColor(255, 255, 0), "タイム %d 点", t);
 	DrawFormatString(0, 20, GetColor(255, 255, 0), "スコア %d 点", p);
 	if (selectbomb == 0)

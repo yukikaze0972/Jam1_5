@@ -109,6 +109,8 @@ void BlackHoleShot()
 		if (BlackHoleDuration == 0)
 		{
 			BlackHole.enable = false;
+			enemy2[0].vx = -2.0;
+			enemy2[0].vy = 2.0;
 		}
 	}
 
