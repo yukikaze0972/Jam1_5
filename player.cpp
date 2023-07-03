@@ -96,14 +96,14 @@ void updatePlayer()
 	{
 		BlackHole.x = player.x;
 		BlackHole.y = player.y;
-		BlackHoleDuration = 1000;
+		BlackHoleDuration = 380;
 		BlackHole.enable = true;
 		PlaySoundMem(daison, DX_PLAYTYPE_BACK);
 	}
 
 	if (CheckHitKey(KEY_INPUT_SPACE) == 1 && selectbomb == 2 && LightRaysTrigger == false)
 	{
-		LightRaysDuration = 300;
+		LightRaysDuration = 250;
 		LightRaysTrigger = true;
 		PlaySoundMem(masupa, DX_PLAYTYPE_BACK);
 	}
