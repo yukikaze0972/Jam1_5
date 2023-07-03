@@ -1,11 +1,12 @@
 #pragma once
 #include "en.h"
-const int EnemyNum = 10;//“G‚Ì”
+const int EnemyNum = 100;//“G‚Ì”
 extern En enemy[EnemyNum];//“G
 extern En enemy2[EnemyNum];//“G
 extern int enemy1img;
 extern int enemy2img;
 extern int kisidaimg;
+extern int kisidahp;
 void initEnemy();//“G‚Ì‰Šú‰»
 void updateEnemy();//“G‚ÌXV
 void updatesecondEnemy();

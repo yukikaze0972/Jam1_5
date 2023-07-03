@@ -50,7 +50,7 @@ void updateGame()
 		score = 0;
 	}
 	
-	if (p >= 2) {
+	if (p >= 200) {
 		scene = stand;
 		
 	}

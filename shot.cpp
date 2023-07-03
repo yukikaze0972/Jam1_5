@@ -139,24 +139,25 @@ void BlackHoleShot()
 				}
 			}
 		}
-		if (enemy2[i].x <= 800 &&
-			enemy2[i].x > 0 &&
-			enemy2[i].y <= 600 &&
-			enemy2[i].y > 0 && BlackHole.enable == true)
+	}
+	if (enemy2[0].x <= 800 &&
+		enemy2[0].x > 0 &&
+		enemy2[0].y <= 600 &&
+		enemy2[0].y > 0 && BlackHole.enable == true)
+	{
+		if (isRight(enemy2[0], BlackHole))
 		{
-			if (isRight(enemy2[i], BlackHole))
+			RotVec(enemy2[0], 0.9);
+		}
+		else {
+			RotVec(enemy2[0], -0.9);
+		}
+		if (enemy2[0].enable == true) {
+			if (isHit(BlackHole, enemy2[0]))
 			{
-				RotVec(enemy2[i], 0.9);
-			}
-			else {
-				RotVec(enemy2[i], -0.9);
-			}
-			if (enemy2[i].enable == true) {
-				if (isHit(BlackHole, enemy2[i]))
-				{
-					enemy2[i].enable = false;//“G‚ð–³Œø
-					p++;
-				}
+				enemy2[0].enable = false;//“G‚ð–³Œø
+				kisidahp = 0;
+				p++;
 			}
 		}
 	}
@@ -242,8 +243,13 @@ void LightRaysShot()
 				enemy2[i].x > 0 &&
 				enemy2[i].y <= 600 &&
 				enemy2[i].y > 0) {
-				enemy2[i].enable = false;
+				kisidahp -= 2;
 				p++;
+
+				if (kisidahp <= 0)
+				{
+					enemy2[i].enable = false;
+				}
 			}
 		}
 	}

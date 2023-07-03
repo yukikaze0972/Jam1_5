@@ -47,7 +47,7 @@ void initEnemy()
 	enemy[1].vy = 0.0;//Y•ûŒü‚ÌƒXƒs[ƒh
 	enemy[1].type = ENEMY2;//’e‚Ìí—Ş
 	//3‘Ì–Ú‚Ì“G
-	enemy[2].x = 2000;//“G‚ÌXÀ•W
+	enemy[2].x = 1500;//“G‚ÌXÀ•W
 	enemy[2].y = 200;//“G‚ÌYÀ•W
 	enemy[2].r = 30;//“G‚Ì‘å‚«‚³
 	enemy[2].color = GetColor(255, 0, 0);//“G‚ÌF
@@ -57,8 +57,8 @@ void initEnemy()
 	enemy[2].vy = 0.0;//Y•ûŒü‚ÌƒXƒs[ƒh
 	enemy[2].type = ENEMY3;//’e‚Ìí—Ş
 	//4‘Ì–Ú‚Ì“G
-	enemy[3].x = 2300;
-	enemy[3].y = 200;
+	enemy[3].x = 1550;
+	enemy[3].y = 50;
 	enemy[3].r = 30;
 	enemy[3].color = GetColor(255, 0, 0);
 	enemy[3].fill = true;
@@ -67,8 +67,8 @@ void initEnemy()
 	enemy[3].vy = 0.0;
 	enemy[3].type = ENEMY3;
 	//5‘Ì–Ú‚Ì“G
-	enemy[4].x = 2500;
-	enemy[4].y = 200;
+	enemy[4].x = 1600;
+	enemy[4].y = 400;
 	enemy[4].r = 30;
 	enemy[4].color = GetColor(255, 0, 0);
 	enemy[4].fill = true;
@@ -77,8 +77,8 @@ void initEnemy()
 	enemy[4].vy = 0.0;
 	enemy[4].type = ENEMY3;
 	//6‘Ì–Ú‚Ì“G
-	enemy[6].x = 2500;
-	enemy[6].y = 200;
+	enemy[6].x = 1600;
+	enemy[6].y = 100;
 	enemy[6].r = 30;
 	enemy[6].color = GetColor(255, 0, 0);
 	enemy[6].fill = true;
@@ -86,6 +86,173 @@ void initEnemy()
 	enemy[6].vx = -2.0;
 	enemy[6].vy = 0.0;
 	enemy[6].type = ENEMY3;
+
+	enemy[7].x = 1700;
+	enemy[7].y = 200;
+	enemy[7].r = 30;
+	enemy[7].color = GetColor(255, 0, 0);
+	enemy[7].fill = true;
+	enemy[7].enable = true;
+	enemy[7].vx = -2.0;
+	enemy[7].vy = 0.0;
+	enemy[7].type = ENEMY3;
+
+	enemy[8].x = 1700;
+	enemy[8].y = 400;
+	enemy[8].r = 30;
+	enemy[8].color = GetColor(255, 0, 0);
+	enemy[8].fill = true;
+	enemy[8].enable = true;
+	enemy[8].vx = -2.0;
+	enemy[8].vy = 0.0;
+	enemy[8].type = ENEMY3;
+
+	enemy[9].x = 1700;
+	enemy[9].y = 500;
+	enemy[9].r = 30;
+	enemy[9].color = GetColor(255, 0, 0);
+	enemy[9].fill = true;
+	enemy[9].enable = true;
+	enemy[9].vx = -2.0;
+	enemy[9].vy = 0.0;
+	enemy[9].type = ENEMY3;
+
+	enemy[10].x = 1750;
+	enemy[10].y = 200;
+	enemy[10].r = 30;
+	enemy[10].color = GetColor(255, 0, 0);
+	enemy[10].fill = true;
+	enemy[10].enable = true;
+	enemy[10].vx = -2.0;
+	enemy[10].vy = 0.0;
+	enemy[10].type = ENEMY3;
+
+	enemy[11].x = 1800;
+	enemy[11].y = 500;
+	enemy[11].r = 30;
+	enemy[11].color = GetColor(255, 0, 0);
+	enemy[11].fill = true;
+	enemy[11].enable = true;
+	enemy[11].vx = -2.0;
+	enemy[11].vy = 0.0;
+	enemy[11].type = ENEMY3;
+
+	enemy[12].x = 1800;
+	enemy[12].y = 100;
+	enemy[12].r = 30;
+	enemy[12].color = GetColor(255, 0, 0);
+	enemy[12].fill = true;
+	enemy[12].enable = true;
+	enemy[12].vx = -2.0;
+	enemy[12].vy = 0.0;
+	enemy[12].type = ENEMY3;
+
+	enemy[13].x = 1800;
+	enemy[13].y = 300;
+	enemy[13].r = 30;
+	enemy[13].color = GetColor(255, 0, 0);
+	enemy[13].fill = true;
+	enemy[13].enable = true;
+	enemy[13].vx = -2.0;
+	enemy[13].vy = 0.0;
+	enemy[13].type = ENEMY3;
+
+	int a = 0;
+	for (int i = 14; i < 20; i++)
+	{
+		enemy[i].x = 1900;
+		enemy[i].y = a + 100;
+		enemy[i].r = 30;
+		enemy[i].color = GetColor(255, 0, 0);
+		enemy[i].fill = true;
+		enemy[i].enable = true;
+		enemy[i].vx = -2.0;
+		enemy[i].vy = 0.0;
+		enemy[i].type = ENEMY3;
+
+		a += 100;
+	}
+
+	a = 0;
+	for (int i = 20; i < 25; i++)
+	{
+		enemy[i].x = 2000;
+		enemy[i].y = a + 100;
+		enemy[i].r = 30;
+		enemy[i].color = GetColor(255, 0, 0);
+		enemy[i].fill = true;
+		enemy[i].enable = true;
+		enemy[i].vx = -2.0;
+		enemy[i].vy = 0.0;
+		enemy[i].type = ENEMY3;
+
+		a += 125;
+	}
+
+
+	a = 0;
+	for (int i = 25; i < 30; i++)
+	{
+		enemy[i].x = 2200;
+		enemy[i].y = a + 100;
+		enemy[i].r = 30;
+		enemy[i].color = GetColor(255, 0, 0);
+		enemy[i].fill = true;
+		enemy[i].enable = true;
+		enemy[i].vx = -2.0;
+		enemy[i].vy = 0.0;
+		enemy[i].type = ENEMY3;
+
+		a += 100;
+	}
+
+	a = 0;
+	for (int i = 30; i < 35; i++)
+	{
+		enemy[i].x = 2500;
+		enemy[i].y = a + 100;
+		enemy[i].r = 30;
+		enemy[i].color = GetColor(255, 0, 0);
+		enemy[i].fill = true;
+		enemy[i].enable = true;
+		enemy[i].vx = -2.0;
+		enemy[i].vy = 0.0;
+		enemy[i].type = ENEMY3;
+
+		a += 125;
+	}
+
+	a = 0;
+	for (int i = 35; i < 30; i++)
+	{
+		enemy[i].x = 2700;
+		enemy[i].y = a + 100;
+		enemy[i].r = 30;
+		enemy[i].color = GetColor(255, 0, 0);
+		enemy[i].fill = true;
+		enemy[i].enable = true;
+		enemy[i].vx = -2.0;
+		enemy[i].vy = 0.0;
+		enemy[i].type = ENEMY3;
+
+		a += 100;
+	}
+
+	a = 0;
+	for (int i = 35; i < 30; i++)
+	{
+		enemy[i].x = 2700;
+		enemy[i].y = a + 100;
+		enemy[i].r = 30;
+		enemy[i].color = GetColor(255, 0, 0);
+		enemy[i].fill = true;
+		enemy[i].enable = true;
+		enemy[i].vx = -2.0;
+		enemy[i].vy = 0.0;
+		enemy[i].type = ENEMY3;
+
+		a += 100;
+	}
 	//2ƒXƒe[ƒW–Ú‚Ì“G
 	//1‘Ì–Ú‚Ì“G
 	enemy2[0].x = 900;
@@ -484,27 +651,27 @@ void drawsecondEnemy()
 {
 	for (int i = 0; i < EnemyNum; i++) {
 		if (1 <= kisidahp && kisidahp <= 100 && scene == second) {
-			DrawFormatString(320, 20, GetColor(25, 200, 0), "vsŠİ“cFHP%d", kisidahp);
+			DrawFormatString(300, 30, GetColor(25, 200, 0), "vsŠİ“cFHP%d", kisidahp);
 		}
 		if (enemy2[i].enable == true) {
 			DrawGraph(enemy2[i].x - 10, enemy2[i].y - 40, kisidaimg, true);
 		}
 		if (scene == second && 75 <= kisidahp && kisidahp <= 100) {
-			DrawFormatString(200, 550, GetColor(255, 200, 0), "Š‘F‰º‹‰ím”@‚«‚ª‚±‚Ì‘æ‚P‚O‚O‘ã“àŠt‘—‘åb\nŠİ“c•¶—Y‚ğ“|‚¹‚é‚Æ‚Å‚àv‚Á‚Ä‚¢‚é‚Ì‚©");
+			DrawFormatString(200, 550, GetColor(255, 0, 0), "Š‘F‰º‹‰ím”@‚«‚ª‚±‚Ì‘æ‚P‚O‚O‘ã“àŠt‘—‘åb\nŠİ“c•¶—Y‚ğ“|‚¹‚é‚Æ‚Å‚àv‚Á‚Ä‚¢‚é‚Ì‚©");
 		}
 		if (scene == second && 50 <= kisidahp && kisidahp <= 74) {
-			DrawFormatString(200, 550, GetColor(255, 200, 0), "‚Ç‚¤‚¾•|‹C’…‚¢‚½‚©H‚È‚ç‚Î‚­‚ç‚¦IIHigherTax!!");
+			DrawFormatString(200, 550, GetColor(255, 0, 0), "‚Ç‚¤‚¾•|‹C’…‚¢‚½‚©H‚È‚ç‚Î‚­‚ç‚¦IIHigherTax!!");
 			//HigherTax –ó@‘Å
 			enemy2[0].type = ENEMY5;
 		}
 		if (scene == second && 30 <= kisidahp && kisidahp <= 49) {
-			DrawFormatString(200, 550, GetColor(255, 200, 0), "‚Ó‚ñ@‚Ç‚¤‚â‚çG‹›‚Å‚Í–³‚¢‚ç‚µ‚¢‚È");
+			DrawFormatString(200, 550, GetColor(255, 0, 0), "‚Ó‚ñ@‚Ç‚¤‚â‚çG‹›‚Å‚Í–³‚¢‚ç‚µ‚¢‚È");
 			enemy2[0].type = ENEMY6;
 		}if (scene == second && 1 <= kisidahp && kisidahp <= 29) {
-			DrawFormatString(200, 550, GetColor(255, 200, 0), "‚±‚Ì€‚É‘¹‚È‚¢‚ªI‚S‚ËI");
+			DrawFormatString(200, 550, GetColor(255, 0, 0), "‚±‚Ì€‚É‘¹‚È‚¢‚ªI‚S‚ËI");
 			enemy2[0].type = ENEMY7;
 		}if (scene == second && kisidahp <= 0) {
-			DrawFormatString(200, 500, GetColor(255, 200, 0), "‰½ƒBIH\n‚±‚Ì‘æ‚P‚O‚O‘ã“àŠt‘—‘åbŠİ“c•¶—Y‚ª•‰‚¯‚é‚Æ‚Í‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ");
+			DrawFormatString(200, 500, GetColor(255, 0, 0), "‰½ƒBIH\n‚±‚Ì‘æ‚P‚O‚O‘ã“àŠt‘—‘åbŠİ“c•¶—Y‚ª•‰‚¯‚é‚Æ‚Í‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ‚ ");
 			enemy2[0].type = ENEMY8;
 		}if (scene == second && kisidahp <= 0 && q >= 50) {
 			DrawFormatString(200, 20, GetColor(255, 0, 0), "ˆÀ”{‚³‚ñ•·‚±‚¦‚Ü‚·‚©H");
