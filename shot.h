@@ -2,7 +2,7 @@
 #include "en.h"
 
 const int ShotNum = 100;
-const int LightRaysShotNum = 3000;
+const int LightRaysShotNum = 1800;
 extern En shot[ShotNum];//’e
 extern En BlackHole;
 extern En LightRays[LightRaysShotNum];
