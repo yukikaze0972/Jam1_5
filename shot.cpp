@@ -239,6 +239,8 @@ void LightRaysShot()
 				enemy[i].y <= 600 &&
 				enemy[i].y > 0 && enemy[i].enable == true) {
 				enemy[i].enable = false;
+				PlaySoundMem(explodese, DX_PLAYTYPE_BACK);//爆破エフェクトの呼び出し
+				explosion(enemy[i]);//爆発
 				p++;
 			}
 			if (enemy2[i].x <= 800 &&
@@ -251,6 +253,8 @@ void LightRaysShot()
 				if (kisidahp <= 0)
 				{
 					enemy2[i].enable = false;
+					PlaySoundMem(explodese, DX_PLAYTYPE_BACK);//爆破エフェクトの呼び出し
+					explosion(enemy2[i]);//爆発
 				}
 			}
 		}

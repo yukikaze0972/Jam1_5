@@ -7,6 +7,7 @@ extern int enemy1img;
 extern int enemy2img;
 extern int kisidaimg;
 extern int kisidahp;
+extern int explodese;
 void initEnemy();//“G‚Ì‰Šú‰»
 void updateEnemy();//“G‚ÌXV
 void updatesecondEnemy();
