@@ -125,9 +125,9 @@ void titleUpdate()
 	{
 		//タイトル画像の描画
 		scene = explanation;//Gameシーンへの切り替え
-		//PlayMusic("sentou.mp3", DX_PLAYTYPE_LOOP);
+		PlayMusic("sentou.mp3", DX_PLAYTYPE_LOOP);
 		//PlayMusic("DEEP IN THE HEATWAVE  SOUND HOLIC　Vo 小寺可南子(THE ARCADE EDIT).mp3", DX_PLAYTYPE_LOOP);
-		PlayMusic("maou_se_8bit24.mp3", DX_PLAYTYPE_BACK);
+		//PlayMusic("maou_se_8bit24.mp3", DX_PLAYTYPE_BACK);
 		//PlayMusic("DEEP IN THE HEATWAVE  SOUND HOLIC　Vo 小寺可南子(THE ARCADE EDIT).mp3", DX_PLAYTYPE_LOOP);
 		//PlayMusic("sentou.mp3", DX_PLAYTYPE_LOOP); 
 	}
@@ -216,11 +216,12 @@ void roundUpdate()
 			LightRays[i].enable = false;
 		}
 	}
-	DrawGraph(0, 0, bg2, true);
-	DrawGraph(200, 190,rond , true);
+	DrawGraph(100, 0, bg2, true);
+	DrawGraph(140, 150,rond , true);
 	DrawFormatString(320, 275, GetColor(255, 255, 0), "タイム %d 点", t);
 	DrawFormatString(320, 300, GetColor(255, 255, 0), "スコア %d 点", p);
 	DrawGraph(200, 350, next, true);
+	DrawGraph(270, 420, press, true);
 }
 //クリア画面の更新関数
 void criaUpdate()
